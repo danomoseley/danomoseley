@@ -1,0 +1,108 @@
+<html> 
+<head> 
+<title>Netprog 2010 HW5 - Dan Moseley</title> 
+<style> 
+.title {
+  font-family:arial,sans-serif;
+  font-size: 12pt;
+  text-align:center;
+}
+</style> 
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script> 
+<script> 
+	var offsetX = Array();
+	var offsetY = Array();
+	var moving = 0;
+	var slow_interval = Array();
+	var num_updates = Array();
+	
+	$(document).ready(function(){
+		$(".cookie").each(function(){
+			id = $(this).attr("id");
+			slow_interval[$(this).attr("id")] = window.setInterval(update_cookie,1000,id);
+			num_updates[id]=0;
+		});
+		$(document).mouseout(function(){
+			if(moving>0){
+				moving=0;
+			}
+		});
+		place();
+		$(".cookie").mousedown(function(e){
+			e.preventDefault();
+			offsetX[$(this).attr("id")]=e.pageX-$(this).offset().left;
+			offsetY[$(this).attr("id")]=e.pageY-$(this).offset().top;
+			window.clearInterval(slow_interval[$(this).attr("id")]);
+			slow_interval[$(this).attr("id")] = 0;
+			moving=$(this).attr("id");
+		});
+		$(document).mouseup(function(e){
+			if(moving>0){
+				id = $("#"+moving).attr("id");
+				slow_interval[id] = window.setInterval(update_cookie,1000,id);
+				moving=0;
+			}
+		});
+		$(document).mousemove(function(e){
+			if (moving==0) return;
+			  if (!e) var e = window.event;
+			 
+			  var  i = $('#'+moving);
+			 
+			  var  mousex = e.pageX ? e.pageX : e.clientX;
+			  var  mousey = e.pageY ? e.pageY : e.clientY;
+			 
+			  posx = mousex - offsetX[i.attr("id")];
+			  posy = mousey - offsetY[i.attr("id")];
+			  i.offset({left: posx, top: posy });
+			  
+			  $.post("hw5.php",{method: "update", id: i.attr("id"), x: posx, y: posy },function(data){
+				if(data.code!=200){
+					alert(data.message);
+				}
+			  }, "json");
+		});
+	});
+	
+	function update_cookie(id){
+		$.post("hw5.php",{method: "get", id: id},function(data){
+			if(data.id!=moving){
+				if(data.code!=200){
+					alert(data.message);
+				}else{
+					$("#"+data.id).offset({left: data.x, top: data.y });
+					if(num_updates[data.id]>1)
+						$("#"+data.id).show();
+					num_updates[data.id]++;
+				}
+			}
+		}, "json");
+	}
+	
+	function place(){
+		$(".cookie").each(function(){
+			update_cookie($(this).attr("id"));
+		});
+	}
+function log(s) {
+  var  lg = document.getElementById('log');
+}
+</script> 
+<style>
+.cookie{
+	display:none;
+	width:125;
+}
+</style> 
+</head> 
+<body> 
+<div id="logger"></div>
+<img id='1' class="cookie" src='faux-repair-plate.jpg' style="width:450"> 
+<img id='2' class="cookie" src='cc.png'> 
+<img id='3' class="cookie" src='cc.png'> 
+<img id='4' class="cookie" src='cc.png'>
+<img id='5' class="cookie" src='cc.png'> 
+<img id='6' class="cookie" src='cc.png'>
+<img id='7' class="cookie" src='cc.png'>
+</body> 
+</html> 

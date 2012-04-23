@@ -1,0 +1,99 @@
+<html>
+	<head>
+		<title>Dan Moseley PHP Sample Code</title>
+	</head>
+<pre>
+&lt;!--Dan Moseley--&gt;
+&lt;!--danomoseley@gmail.com--&gt;
+&lt;!--This php code segment queries a mysql database and builds a news page with the data results of the query--&gt;
+
+&lt;!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"
+  xml:lang="en" lang="en"&gt;
+&lt;head&gt;
+  &lt;title&gt;Hidden Ponds Stables&lt;/title&gt;
+  &lt;link rel="stylesheet" type="text/css" href="styles.css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="header_background"&gt;
+  &lt;div id="center_panel"&gt;
+    &lt;div id="header"&gt;
+      &lt;img src="img/banner-full.png"&gt;
+      &lt;div id="logo"&gt;
+        &lt;a href="index.php"&gt;&lt;img src="img/logo.png"&gt;&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="navigation"&gt;
+      &lt;a href="index.php"&gt;&lt;img src="img/navbutton-stables.png"&gt;&lt;/a&gt;&lt;a href="#"&gt;&lt;img src="img/navbutton-horses.png"&gt;&lt;/a&gt;&lt;a href="services.php"&gt;&lt;img src="img/navbutton-services.png"&gt;&lt;/a&gt;&lt;a href="events.php"&gt;&lt;img src="img/navbutton-calendar.png"&gt;&lt;/a&gt;&lt;a href="#"&gt;&lt;img src="img/navbutton-forsale.png"&gt;&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="center_pane"&gt;
+  &lt;div id="slideshow"&gt;
+    &lt;img src="img/slideshow-image.png"&gt;
+  &lt;/div&gt;
+  &lt;div id="content"&gt;
+    &lt;?
+	  &lt;!--All database connection info is stored in a file called dbinfo.inc.php--&gt;
+          include("dbinfo.inc.php");
+	  mysql_connect($hostname,$username,$password);
+          @mysql_select_db($database) or die( "Unable to select database");
+          
+	  &lt;!--All database connection info is stored in a file called dbinfo.inc.php--&gt;
+	  $query="SELECT * FROM news WHERE deleted='0' ORDER BY date desc";
+          $result=mysql_query($query);
+          $num=mysql_numrows($result);
+          $result2=mysql_query($query) or die(mysql_error());
+          $num2=mysql_numrows($result2);
+	  $query="SELECT * FROM config";
+	  $result3=mysql_query($query);
+          mysql_close();
+        ?&gt;
+    &lt;div id="left"&gt;
+      &lt;img src="img/content-heading1.png"&gt; &lt;br/&gt;
+      &lt;br/&gt;
+      &lt;?
+            $intro=mysql_result($result3,$i,"intro");
+            echo "$intro";
+        ?&gt;
+      &lt;br/&gt;
+      &lt;br /&gt;
+      &lt;img src="img/content-divider.png"&gt;&lt;br/&gt;
+      &lt;br/&gt;
+      &lt;img src="img/content-heading2.png"&gt;&lt;br/&gt;
+      &lt;br/&gt;
+      &lt;?
+          $i=0;
+          while ($i &lt; $num) {
+
+            $title=mysql_result($result,$i,"title");
+            $text=mysql_result($result,$i,"text");
+            $author=mysql_result($result,$i,"author");
+            $date=mysql_result($result,$i,"date");
+	    
+	    &lt;!-- Add the local time difference from the server time to the post time --&gt;
+	    $date .= $timeDiff;
+	    $date = strtotime( $date );
+	    $time = date('g:i a',$date);
+	    $day = date('l, F j Y',$date);
+            echo "&lt;br/&gt;&lt;b&gt;$title&lt;/b&gt;&lt;br/&gt; $text&lt;br/&gt;  -$time on $day&lt;br/&gt;";
+
+            $i++;
+          }
+        ?&gt;
+    &lt;/div&gt;
+    &lt;div id="right"&gt;
+      &lt;div id="calendar"&gt;
+      &lt;iframe scrolling="no" frameborder="0" height="306px" width="294px" src="calendar.php"&gt;
+        
+      &lt;/div&gt;
+      &lt;a href="#"&gt;&lt;img src="img/ad-summerCamp.png"&gt;&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</html>
