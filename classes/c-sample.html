@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Dan Moseley C Sample Code</title>
+<meta name="generator" content="C++2HTML by Jasper Bedaux">
+<!-- To generate your own colored code visit http://www.bedaux.net/cpp2html/ -->
+<style type="text/css">
+.comment { color: #999999; font-style: italic; }
+.pre { color: #000099; }
+.string { color: #009900; }
+.char { color: #009900; }
+.float { color: #996600; }
+.int { color: #999900; }
+.bool { color: #000000; font-weight: bold; }
+.type { color: #FF6633; }
+.flow { color: #FF0000; }
+.keyword { color: #990000; }
+.operator { color: #663300; font-weight: bold; }
+.operator { color: #663300; font-weight: bold; }
+</style>
+</head><body>
+<pre><span class="comment">// danomoseleyShell.c
+// Dan Moseley
+// danomoseley@gmail.com
+// ___Unix Shell___
+// This program acts as a shell, the user can launch
+// programs either from a direct path or from the
+// environment variable MYPATH 
+// The shell also has the option to launch programs
+// in the background by appending an ampersand to the
+// end of the command. 2 internal commands available 
+// are 'history' and 'quit' 
+</span><span class="pre">
+#include &lt;sys/types.h&gt;
+#include &lt;dirent.h&gt;
+#include &lt;sys/stat.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;sys/wait.h&gt;
+#include &lt;ctype.h&gt;
+</span><span class="type">
+int</span> LINE_MAX<span class="operator"> =</span><span class="int"> 2000</span><span class="operator">;</span><span class="type">
+char</span><span class="operator"> *</span> history<span class="operator">[</span><span class="int">100</span><span class="operator">];</span><span class="type">
+int</span> history_size<span class="operator">;</span><span class="type">
+
+void</span> tokenize<span class="operator">(</span><span class="type">char</span><span class="operator">*</span> data<span class="operator">,</span><span class="type"> char</span><span class="operator">*</span> delim<span class="operator">,</span><span class="type"> char</span><span class="operator">*</span> result<span class="operator">[]);</span><span class="type">
+int</span> background<span class="operator">(</span><span class="type">char</span><span class="operator"> *</span> command<span class="operator">);</span><span class="type">
+void</span> update_history<span class="operator">(</span><span class="type">char</span><span class="operator"> *</span> command<span class="operator">);</span><span class="type">
+void</span> print_history<span class="operator">();</span><span class="type">
+char</span><span class="operator">*</span> searchFolder<span class="operator">(</span><span class="type">char</span><span class="operator">*</span> folder_path<span class="operator">,</span><span class="type">char</span><span class="operator">*</span> search<span class="operator">);</span><span class="type">
+char</span><span class="operator"> *</span> trim<span class="operator">(</span><span class="type">char</span><span class="operator"> *</span> input<span class="operator">);</span><span class="type">
+void</span> do_path<span class="operator">(</span><span class="type">char</span><span class="operator"> *</span> paths<span class="operator">[],</span><span class="type">char</span><span class="operator"> *</span>envp<span class="operator">[]);</span><span class="type">
+void</span> handle_input<span class="operator">(</span><span class="type">char</span><span class="operator"> *</span> input<span class="operator">,</span><span class="type"> char</span><span class="operator"> *</span>paths<span class="operator">[]);</span><span class="type">
+void</span> spawn_child<span class="operator">(</span><span class="type">char</span><span class="operator"> *</span> args<span class="operator">[],</span><span class="type">int</span> back<span class="operator">);</span><span class="type">
+void</span> find_path<span class="operator">(</span><span class="type">char</span><span class="operator"> *</span> args<span class="operator">[],</span><span class="type">char</span><span class="operator"> *</span> paths<span class="operator">[]);</span><span class="type">
+
+int</span><span class="keyword"> main</span><span class="operator">(</span><span class="type">int</span> argc<span class="operator">,</span><span class="type"> char</span><span class="operator"> *</span>argv<span class="operator">[],</span><span class="type"> char</span><span class="operator"> *</span>envp<span class="operator">[])
+{</span><span class="type">
+	char</span><span class="operator"> *</span> strdata<span class="operator">;</span><span class="type">
+	char</span><span class="operator"> *</span> paths<span class="operator">[</span><span class="int">128</span><span class="operator">];</span>
+	history_size<span class="operator"> =</span><span class="int"> 0</span><span class="operator">;</span>
+	do_path<span class="operator">(</span>paths<span class="operator">,</span>envp<span class="operator">);</span><span class="comment">
+	
+	// Loop indefinitely
+</span><span class="flow">	while</span><span class="operator">(</span><span class="int">1</span><span class="operator">){</span>
+		strdata<span class="operator"> =</span> malloc<span class="operator">(</span>LINE_MAX<span class="operator">*</span><span class="keyword">sizeof</span><span class="operator">(</span><span class="type">char</span><span class="operator">*));</span>
+		
+		printf<span class="operator">(</span><span class="string">"&gt; "</span><span class="operator">);</span>
+		fgets<span class="operator">(</span>strdata<span class="operator">,</span>LINE_MAX<span class="operator">,</span>stdin<span class="operator">);</span>
+		handle_input<span class="operator">(</span>strdata<span class="operator">,</span> paths<span class="operator">);
+	}</span><span class="flow">
+	return</span><span class="int"> 0</span><span class="operator">;
+}</span><span class="type">
+
+void</span> handle_input<span class="operator">(</span><span class="type">char</span><span class="operator"> *</span>input<span class="operator">,</span><span class="type"> char</span><span class="operator"> *</span>paths<span class="operator">[]){</span>
+	input<span class="operator"> =</span> trim<span class="operator">(</span>input<span class="operator">);</span><span class="type">
+	int</span> len<span class="operator"> =</span> strlen<span class="operator">(</span>input<span class="operator">);</span><span class="flow">
+	if</span><span class="operator">(</span>len<span class="operator">&gt;</span><span class="int">0</span><span class="operator">){</span><span class="comment">
+		// If the string captured from stdin ends with a new line
+		// (which it should) replace the newline with a null terminator
+</span><span class="flow">		if</span><span class="operator">(</span>input<span class="operator">[</span>len<span class="operator">-</span><span class="int">1</span><span class="operator">]==</span><span class="char">'\n'</span><span class="operator">){</span>
+			input<span class="operator">[</span>len<span class="operator">-</span><span class="int">1</span><span class="operator">]=</span><span class="char">'\0'</span><span class="operator">;
+		}</span><span class="comment">
+		// If the user types the internal command 'quit' then exit the program
+</span><span class="flow">		if</span><span class="operator">(</span>strcmp<span class="operator">(</span>input<span class="operator">,</span><span class="string">"quit"</span><span class="operator">)==</span><span class="int">0</span><span class="operator">){</span>
+			exit<span class="operator">(</span><span class="int">0</span><span class="operator">);</span><span class="comment">
+		// If the user enters the internal command 'history' then print out the
+		// history of past commands in chronological order
+</span><span class="operator">		}</span><span class="flow">else if</span><span class="operator">(</span>strcmp<span class="operator">(</span>input<span class="operator">,</span><span class="string">"history"</span><span class="operator">)==</span><span class="int">0</span><span class="operator">){</span>
+			print_history<span class="operator">();
+		}</span><span class="flow">else</span><span class="operator">{</span>
+			update_history<span class="operator">(</span>input<span class="operator">);</span><span class="comment">
+			// Check if the user has denoted that the program should be run
+			// in the background by appending an ampersand
+</span><span class="type">			int</span> back<span class="operator"> =</span> background<span class="operator">(</span>input<span class="operator">);</span><span class="type">
+			char</span><span class="operator"> *</span> args<span class="operator">[</span><span class="int">128</span><span class="operator">];</span><span class="comment">
+			// Tokenize the input on a space delimiter
+</span>			tokenize<span class="operator">(</span>input<span class="operator">,</span><span class="string">" "</span><span class="operator">,</span>args<span class="operator">);</span><span class="comment">
+			// Find the absolute or relative path for the program that the user
+			// wishes to execute
+</span>			find_path<span class="operator">(</span>args<span class="operator">,</span>paths<span class="operator">);</span><span class="comment">
+			// If after running the path through the find_path function it is
+			// still NULL then the user has entered a path that could not 
+			// be found, print out an appropriate error message
+</span><span class="flow">			if</span><span class="operator">(</span>args<span class="operator">[</span><span class="int">0</span><span class="operator">]==</span>NULL<span class="operator">){</span>
+				printf<span class="operator">(</span><span class="string">"Sorry, I couldn't find your file\n"</span><span class="operator">);
+			}</span><span class="flow">else</span><span class="operator">{</span><span class="comment">
+				// Spawn the child process with the specified user program
+</span>				spawn_child<span class="operator">(</span>args<span class="operator">,</span>back<span class="operator">);
+			}
+		}
+	}
+}</span><span class="comment">
+
+// This function is used to take what the user entered at the prompt
+// and search in the current directory first and then search through
+// all the directories listed in MYPATH, and return the first found
+// absolute path. If the path begins with a '/' it is probably already
+// an absolute path and will be returned without modification.
+</span><span class="type">void</span> find_path<span class="operator">(</span><span class="type">char</span><span class="operator"> *</span> args<span class="operator">[],</span><span class="type">char</span><span class="operator"> *</span> paths<span class="operator">[]){</span><span class="type">
+	char</span><span class="operator"> *</span> absolute_path<span class="operator">;</span><span class="flow">		
+	if</span><span class="operator">(</span>args<span class="operator">[</span><span class="int">0</span><span class="operator">][</span><span class="int">0</span><span class="operator">]!=</span><span class="char">'/'</span><span class="operator">){</span>
+		absolute_path<span class="operator"> =</span> searchFolder<span class="operator">(</span><span class="string">"."</span><span class="operator">,</span>args<span class="operator">[</span><span class="int">0</span><span class="operator">]);</span><span class="flow">
+		if</span><span class="operator">(</span>absolute_path<span class="operator">==</span>NULL<span class="operator">){</span><span class="type">
+			int</span> i<span class="operator">=</span><span class="int">0</span><span class="operator">;</span><span class="flow">
+			while</span><span class="operator">(</span>paths<span class="operator">[</span>i<span class="operator">]!=</span>NULL<span class="operator">&amp;&amp;</span>absolute_path<span class="operator">==</span>NULL<span class="operator">){</span>
+				absolute_path<span class="operator"> =</span> searchFolder<span class="operator">(</span>paths<span class="operator">[</span>i<span class="operator">],</span>args<span class="operator">[</span><span class="int">0</span><span class="operator">]);</span>
+				i<span class="operator">++;
+			}
+		}</span>
+		args<span class="operator">[</span><span class="int">0</span><span class="operator">]=</span>absolute_path<span class="operator">;
+	}
+}</span><span class="comment">
+
+// This function parses the MYPATH environment variable and tokenizes it
+// on '$' into an array. If MYPATH is not set, then return an appropriate
+// error message and exit the program.
+</span><span class="type">void</span> do_path<span class="operator">(</span><span class="type">char</span><span class="operator"> *</span> paths<span class="operator">[],</span><span class="type">char</span><span class="operator"> *</span>envp<span class="operator">[]){</span><span class="type">
+	char</span><span class="operator"> *</span> mypath<span class="operator"> =</span> getenv<span class="operator">(</span><span class="string">"MYPATH"</span><span class="operator">);</span><span class="flow">
+	if</span><span class="operator">(</span>mypath<span class="operator">==</span>NULL<span class="operator">){</span>
+		printf<span class="operator">(</span><span class="string">"Error: Couldn't find MYPATH environment variable. Program will now exit\n"</span><span class="operator">);</span>
+		exit<span class="operator">(</span><span class="int">0</span><span class="operator">);
+	}</span><span class="flow">
+	else</span><span class="operator">{</span>
+		printf<span class="operator">(</span><span class="string">"Welcome to BashOp!\n"</span><span class="operator">);
+	}</span>	
+	tokenize<span class="operator">(</span>mypath<span class="operator">,</span><span class="string">"$"</span><span class="operator">,</span>paths<span class="operator">);
+}</span><span class="comment">
+
+// This function takes the absolute path that has been found and launches the
+// program either in the foreground or the background, whichever the user
+// has specified
+</span><span class="type">void</span> spawn_child<span class="operator">(</span><span class="type">char</span><span class="operator"> *</span> args<span class="operator">[],</span><span class="type">int</span> back<span class="operator">){</span>
+	pid_t p<span class="operator">;</span>
+	p<span class="operator">=</span>fork<span class="operator">();</span><span class="flow">
+	if</span><span class="operator">(</span>p<span class="operator">==</span><span class="int">0</span><span class="operator">){</span>
+		execv<span class="operator">(</span>args<span class="operator">[</span><span class="int">0</span><span class="operator">],</span>args<span class="operator">);</span>
+		perror<span class="operator">(</span><span class="string">"Failed"</span><span class="operator">);</span>
+		exit<span class="operator">(</span><span class="int">0</span><span class="operator">);
+	}</span><span class="flow">
+	else if</span><span class="operator"> (</span>p<span class="operator">&gt;</span><span class="int">0</span><span class="operator">){</span><span class="flow">
+		if</span><span class="operator">(!</span>back<span class="operator">)</span>
+			wait<span class="operator">(</span>NULL<span class="operator">);
+	}</span><span class="flow">
+	else</span><span class="operator">{</span>
+		perror<span class="operator">(</span><span class="string">"Fork failed"</span><span class="operator">);
+	}
+}</span><span class="comment">
+
+// This function takes a string, and a delimiter as arguments and tokenizes the
+// string on the specified delimiter into the result array
+</span><span class="type">void</span> tokenize<span class="operator">(</span><span class="type">char</span><span class="operator">*</span> data<span class="operator">,</span><span class="type"> char</span><span class="operator">*</span> delim<span class="operator">,</span><span class="type"> char</span><span class="operator">*</span> result<span class="operator">[]){</span><span class="type">
+	char</span><span class="operator">*</span> token<span class="operator">;</span>
+	token<span class="operator"> =</span> strtok<span class="operator">(</span>data<span class="operator">,</span>delim<span class="operator">);</span><span class="type">
+	int</span> i<span class="operator">=</span><span class="int">0</span><span class="operator">;</span><span class="flow">
+	while</span><span class="operator">(</span>token<span class="operator">!=</span>NULL<span class="operator">){</span>	
+		result<span class="operator">[</span>i<span class="operator">]=</span>token<span class="operator">;</span>
+		token<span class="operator"> =</span> strtok<span class="operator">(</span>NULL<span class="operator">,</span>delim<span class="operator">);</span>
+		i<span class="operator">++;
+	}</span>
+	result<span class="operator">[</span>i<span class="operator">]=</span>NULL<span class="operator">;
+}</span><span class="comment">
+
+// This function updates the history array with the most recently entered command
+// at the end of the array
+</span><span class="type">void</span> update_history<span class="operator">(</span><span class="type">char</span><span class="operator"> *</span> command<span class="operator">){</span>
+	history<span class="operator">[</span>history_size<span class="operator">] =</span> command<span class="operator">;</span>
+	history_size<span class="operator">++;
+}</span><span class="comment">
+
+// This function prints out the history array in chronological order
+</span><span class="type">void</span> print_history<span class="operator">(){</span><span class="type">
+	int</span> i<span class="operator">;</span><span class="flow">
+	for</span><span class="operator">(</span>i<span class="operator">=</span><span class="int">0</span><span class="operator">;</span>i<span class="operator">&lt;</span>history_size<span class="operator">;</span>i<span class="operator">++){</span>
+		printf<span class="operator">(</span><span class="string">"%s\n"</span><span class="operator">,</span>history<span class="operator">[</span>i<span class="operator">]);
+	}
+}</span><span class="comment">
+
+// This function tests if the string ends with an ampersand which denotes that the
+// user wishes to run the program in the background
+// If an ampersand is detected it is replaced with a null terminator, and the function
+// returns 1 for true and 0 for false
+</span><span class="type">int</span> background<span class="operator">(</span><span class="type">char</span><span class="operator"> *</span> command<span class="operator">){</span><span class="type">
+	int</span> len<span class="operator">=</span>strlen<span class="operator">(</span>command<span class="operator">);</span><span class="flow">
+	if</span><span class="operator">(</span>command<span class="operator">[</span>len<span class="operator">-</span><span class="int">1</span><span class="operator">]==</span><span class="char">'&amp;'</span><span class="operator">){</span>
+		command<span class="operator">[</span>len<span class="operator">-</span><span class="int">1</span><span class="operator">] =</span><span class="char"> '\0'</span><span class="operator">;</span><span class="flow">
+		return</span><span class="int"> 1</span><span class="operator">;
+	}</span><span class="flow">else
+		return</span><span class="int"> 0</span><span class="operator">;
+}</span><span class="comment">
+
+// This function searches a folder path recursively for a specified file name,
+// and returns the first found absolute path
+</span><span class="type">char</span><span class="operator">*</span> searchFolder<span class="operator">(</span><span class="type">char</span><span class="operator">*</span> folder_path<span class="operator">,</span><span class="type">char</span><span class="operator">*</span> search<span class="operator">){</span>
+	DIR<span class="operator">*</span> working_directory<span class="operator"> =</span> opendir<span class="operator">(</span>folder_path<span class="operator">);</span><span class="keyword">
+	struct</span> dirent<span class="operator">*</span> dirp<span class="operator">;</span><span class="flow">
+	if</span><span class="operator"> (</span>working_directory<span class="operator">!=</span>NULL<span class="operator">)
+	{</span><span class="flow">
+		while</span><span class="operator"> ( (</span>dirp<span class="operator"> =</span> readdir<span class="operator">(</span>working_directory<span class="operator">)) !=</span>NULL<span class="operator">)
+		{</span><span class="flow">
+			if</span><span class="operator">(</span>strcmp<span class="operator">(</span>dirp<span class="operator">-&gt;</span>d_name<span class="operator">,</span><span class="string">"."</span><span class="operator">)!=</span><span class="int">0</span><span class="operator">&amp;&amp;</span>strcmp<span class="operator">(</span>dirp<span class="operator">-&gt;</span>d_name<span class="operator">,</span><span class="string">".."</span><span class="operator">)!=</span><span class="int">0</span><span class="operator">)
+			{</span><span class="keyword">
+				struct</span> stat _stat<span class="operator">;</span><span class="type">
+				char</span><span class="operator"> *</span> temp<span class="operator">;</span>
+				temp<span class="operator"> =</span> malloc<span class="operator">(</span><span class="int">1024</span><span class="operator">*</span><span class="keyword">sizeof</span><span class="operator">(</span><span class="type">char</span><span class="operator">*));</span>
+				strcpy<span class="operator">(</span>temp<span class="operator">,</span>folder_path<span class="operator">);</span>
+				strcat<span class="operator">(</span>temp<span class="operator">,</span><span class="string">"/"</span><span class="operator">);</span>
+				strcat<span class="operator">(</span>temp<span class="operator">,</span>dirp<span class="operator">-&gt;</span>d_name<span class="operator">);</span><span class="flow">
+				if</span><span class="operator">(</span><span class="int"> 0</span><span class="operator"> &gt;</span> stat<span class="operator">(</span>temp<span class="operator">,&amp;</span>_stat<span class="operator">)){</span>
+					printf<span class="operator">(</span><span class="string">"Error with stat on file %s\n"</span><span class="operator">,</span>temp<span class="operator">);
+				}</span><span class="flow">
+				if</span><span class="operator">(</span>S_ISDIR<span class="operator">(</span>_stat<span class="operator">.</span>st_mode<span class="operator">)){</span>
+					strcat<span class="operator">(</span>temp<span class="operator">,</span><span class="string">"/"</span><span class="operator">);</span>
+					searchFolder<span class="operator">(</span>temp<span class="operator">,</span>search<span class="operator">);
+				}</span><span class="flow">
+				if</span><span class="operator">(</span>S_ISREG<span class="operator">(</span>_stat<span class="operator">.</span>st_mode<span class="operator">)&amp;&amp;</span>strcmp<span class="operator">(</span>dirp<span class="operator">-&gt;</span>d_name<span class="operator">,</span>search<span class="operator">)==</span><span class="int">0</span><span class="operator">){</span><span class="flow">
+					return</span> temp<span class="operator">;
+				}
+			}
+		}</span>
+	closedir<span class="operator">(</span>working_directory<span class="operator">);
+	}</span><span class="flow">
+	else</span><span class="operator">
+	{</span>
+		printf<span class="operator">(</span><span class="string">"Error opening directory %s\n"</span><span class="operator">,</span> folder_path<span class="operator">);
+	}</span><span class="flow">
+	return</span> NULL<span class="operator">;
+}</span><span class="comment">
+
+// This function trims the leading and tailing spaces off of a string
+</span><span class="type">char</span><span class="operator">*</span> trim<span class="operator">(</span><span class="type">char</span><span class="operator"> *</span> input<span class="operator">){</span><span class="type">
+  int</span> len<span class="operator">=</span>strlen<span class="operator">(</span>input<span class="operator">);</span><span class="type">
+  int</span> i<span class="operator">=</span><span class="int">0</span><span class="operator">;</span><span class="flow">
+ 
+  if</span><span class="operator">(</span>input<span class="operator">==</span>NULL<span class="operator">)</span><span class="flow">
+        return</span> NULL<span class="operator">;</span><span class="flow">
+ 
+  while</span><span class="operator">(</span>isspace<span class="operator">(</span>input<span class="operator">[</span>len<span class="operator">-</span><span class="int">1</span><span class="operator">]))
+        {</span>
+          input<span class="operator">[</span>len<span class="operator">-</span><span class="int">1</span><span class="operator">]=</span><span class="char">'\0'</span><span class="operator">;</span>
+          len<span class="operator">--;
+        }</span><span class="flow">
+  while</span><span class="operator">(</span>isspace<span class="operator">(</span>input<span class="operator">[</span>i<span class="operator">]))</span>input<span class="operator">++;</span><span class="flow">
+ 
+ return</span> input<span class="operator">;
+}</span>
+</pre>
+</body></html>
