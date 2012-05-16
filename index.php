@@ -57,25 +57,6 @@
 		</div>
 		<div class="section">
 			<div class="sectionTitle">
-				Education
-			</div>
-			<div class="sectionRight">
-				<div class="item">
-					<div class="title"> 
-						<a href="http://www.rpi.edu" target = "_blank">Rensselaer Polytechnic Institute (RPI), Troy, NY</a>
-					</div>
-					<div class="secondaryTitle gpa">
-						GPA: 3.14
-					</div>
-					<div class="cleaner">
-						Bachelor of Science in Computer Science, May 2010
-					</div>
-				</div>
-			</div>
-			<div class="cleaner"></div>
-		</div>
-		<div class="section">
-			<div class="sectionTitle">
 				Skills
 			</div>
 			<div class="sectionRight">
@@ -137,7 +118,7 @@
 				<div class="item">
 					<div>
 						<div class="title">
-							Mobile Developer, Project Manager
+							Mobile Web Developer, Project Manager
 						</div>
 						<div class="secondaryTitle">
 							July 2010 - November 2011
@@ -154,10 +135,10 @@
 							Project manager for HTML5 JQuery based web application targetting iPad and iPad2 devices, utilizing continuous communication with API through JSON.
 						</li>
 						<li>
-							Extensive experience with geolocation API with integration with google maps javascript API.
+							Extensive experience with geolocation API and integration with google maps javascript API.
 						</li>
 						<li>
-							HTML5 offline functionality using cache manifest and Web SQL with offline request queueing.
+							HTML5 offline functionality using cache manifest, local storage, web SQL, and offline request queueing.
 						</li>
 						<li>
 							Utilized <a href="http://www.phonegap.com" target = "_blank">PhoneGap</a> application wrapper to access iPhone and Android device camera functionality from within the web application.
@@ -221,32 +202,18 @@
 		<div class="cleaner"></div>
 		<div class="section">
 			<div class="sectionTitle">
-				Educational Experience
+				Education
 			</div>
 			<div class="sectionRight">
 				<div class="item">
-					<div>
-						<div class="title">
-							Personal Projects
-						</div>
-						<div class="secondaryTitle">
-							<a href="http://www.danomoseley.com" target = "_blank">www.danomoseley.com</a>
-						</div>
+					<div class="title"> 
+						<a href="http://www.rpi.edu" target = "_blank">Rensselaer Polytechnic Institute (RPI), Troy, NY</a>
 					</div>
-					<ul class="cleaner">
-						<li>
-							Web development (HTML, JQuery) for several sites including <a href="http://www.savannahwolf.com" target = "_blank">savannahwolf.com</a>.
-						</li>
-					</ul>
-				</div>
-				<div class="item">
-					<div>
-						<div class="title">
-							Formal Eduation
-						</div>
-						<div class="secondaryTitle">
-							<a href="http://www.cs.rpi.edu/" target = "_blank">RPI</a>
-						</div>
+					<div class="secondaryTitle gpa">
+						GPA: 3.14
+					</div>
+					<div class="cleaner">
+						Bachelor of Science in Computer Science, May 2010
 					</div>
 					<ul class="cleaner">
 						<li>
@@ -272,16 +239,37 @@
 		<div class="cleaner"></div>
 		<div class="section">
 			<div class="sectionTitle">
+				Projects
+			</div>
+			<div class="sectionRight">
+				<div class="item">
+					<div>
+						<div class="title">
+							Personal Projects
+						</div>
+					</div>
+					<ul class="cleaner">
+						<li>
+							Web development (HTML, JQuery) for sites including <a href="http://www.savannahwolf.com" target = "_blank">savannahwolf.com</a> and <a href="http://www.babyboyfrance.com" target = "_blank">babyboyfrance.com</a>.
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="cleaner"></div>
+		</div>
+		<div class="cleaner"></div>
+		<div class="section">
+			<div class="sectionTitle">
 				Leadership
 			</div>
 			<div class="sectionRight">
 				<div class="item">
 					<div>
 						<div class="title">
-							<a href="http://www.rse.org" target = "_blank">Rensselaer Society of Engineers Fraternity</a>
+							<a href="http://www.rse.org" target = "_blank">Rensselaer Society of Engineers</a>
 						</div>
 						<div class="secondaryTitle">
-							Spring 2005 - Present
+							2005 - 2010
 						</div>
 					</div>
 					<ul class="cleaner">
