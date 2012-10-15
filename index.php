@@ -30,7 +30,7 @@
 
 	</script>  
 	<script src="js/spin.min.js"></script>
-	<script src="js/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	<script src="js/jquery.lightbox_me.js"></script>
 	<script src="js/jquery.cookie.js"></script>
 	<script src="js/main.js"></script>
@@ -41,7 +41,7 @@
 			<div class="info">
 				<h1><a href="http://plus.google.com/101975558907093281721" target="_blank">Dan Moseley</a></h1>
 				<ul>
-					<li><a target = "_blank" href="http://g.co/maps/eguzg">220 E 52 St, New York, NY 10022</a></li>
+					<li><a target = "_blank" href="http://goo.gl/maps/96M80">New York, NY 10022</a></li>
 					<li><a href="mailto:danomoseley@gmail.com" target = "_blank">danomoseley@gmail.com</a></li>
 					<li>646.807.8961</li>
 					<?php if ($pdf) { ?>
@@ -49,11 +49,20 @@
 					<?php } ?>
 				</ul>
 			</div>
+			<!-- Used to have an objective in the upper right
 			<div class="objective">
-				<h2>Objective</h2>
+				
+			</div>
+			-->
+			<div class="cleaner"></div>
+		</div>
+		<div class="about">
+			<div class="content">
+				<h2>About Me</h2>
 				A web developer position that will challenge my skills in both front end and back end development, object oriented javascript, RESTful APIs, algorithm complexity analysis, and innovative problem solving.
 			</div>
-			<div class="cleaner"></div>
+			<div class="pull-tab off">
+			</div>
 		</div>
 		<div class="section">
 			<div class="sectionTitle">
@@ -61,7 +70,7 @@
 			</div>
 			<div class="sectionRight">
 				<div class="item">
-					<b>Laguages:</b> Expert in PHP, HTML5, CSS3, C#, C++, C, and ASP.net. Advanced skills in Javascript+JQuery, MySQL and MSSQL. Intermediate skills in Java, Pascal, Perl.<br/>
+					<b>Laguages:</b> Expert in PHP, HTML5, CSS3, C++, and C. Proficient skills in Javascript+JQuery, MySQL and MSSQL. Intermediate skills in C#, ASP.net, Java, Pascal, Perl.<br/>
 					<b>Protocols:</b> Intimate knowledge of HTTP, DNS, FTP, TFTP, TCP, UDP, telnet, IPv4, IPv6
 				</div>
 				<div class="item smarterer">

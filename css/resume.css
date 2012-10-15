@@ -55,10 +55,39 @@ body{
 	}
 	
 	.header{
-		border-bottom:0.154em solid black;
-		margin-bottom:1.154em;
 		padding-bottom: 1.154em;
-		border-bottom:0.154em solid #e3e3e3;
+	}
+	
+	.about{
+		border:0.077em solid #e3e3e3;
+		margin-bottom:1.5em;
+		background-color:#EFEFEF;
+		position:relative;
+	}
+	
+	.about .content{
+		display:none;
+		padding:10px;
+	}
+	
+	.about .pull-tab.off{
+		position:absolute;
+		bottom:-1.3em;
+		right:1em;
+		opacity:0.5;
+		border-left: 1em solid transparent;
+		border-right: 1em solid transparent;
+		border-top: 1em solid #719fb6;
+	}
+	
+	.about .pull-tab.on{
+		position:absolute;
+		bottom:-1.3em;
+		right:1em;
+		opacity:0.5;
+		border-left: 1em solid transparent;
+		border-right: 1em solid transparent;
+		border-bottom: 1em solid #719fb6;
 	}
 	
 	.title{

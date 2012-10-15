@@ -19,6 +19,10 @@ font-size:15.5px;
 	padding-bottom: 0.770em;
 }
 
+.about .pull-tab{
+	display:none;
+}
+
 .section{
 	margin-bottom:0.83em;
 }

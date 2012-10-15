@@ -1,22 +1,23 @@
 $.fn.spin = function(opts) {
-		  this.each(function() {
-			var $this = $(this),
-				data = $this.data();
+  this.each(function() {
+	var $this = $(this),
+		data = $this.data();
 
-			if (data.spinner) {
-			  data.spinner.stop();
-			  delete data.spinner;
-			}
-			if (opts !== false) {
-			  data.spinner = new Spinner($.extend({color: $this.css('color')}, opts)).spin(this);
-			}
-		  });
-		  return this;
-		};
+	if (data.spinner) {
+	  data.spinner.stop();
+	  delete data.spinner;
+	}
+	if (opts !== false) {
+	  data.spinner = new Spinner($.extend({color: $this.css('color')}, opts)).spin(this);
+	}
+  });
+  return this;
+};
 		$(document).ready(function(){
-			window.setTimeout(function() {
-				$(".item").addClass("animate");
-			}, 100);
+			$(".about .pull-tab").on("click", function() {
+				$('.about .content').slideToggle();
+				$(this).toggleClass('on off');
+			});
 			$(".print").click(function(e){
 				var opts = {
 				  lines: 12, // The number of lines to draw
