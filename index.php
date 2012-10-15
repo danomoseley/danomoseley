@@ -59,7 +59,7 @@
 		<div class="about">
 			<div class="content">
 				<h2>About Me</h2>
-				A web developer position that will challenge my skills in both front end and back end development, object oriented javascript, RESTful APIs, algorithm complexity analysis, and innovative problem solving.
+				A web developer always looking to challenge my skills in both front end and back end development, object oriented javascript, RESTful APIs, algorithm complexity analysis, and innovative problem solving.
 			</div>
 			<div class="pull-tab off">
 			</div>
