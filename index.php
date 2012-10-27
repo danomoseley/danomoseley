@@ -70,7 +70,7 @@
 			</div>
 			<div class="sectionRight">
 				<div class="item">
-					<b>Laguages:</b> Expert in PHP, HTML5, CSS3, C++, and C. Proficient skills in Javascript+JQuery, MySQL and MSSQL. Intermediate skills in C#, ASP.net, Java, Pascal, Perl.<br/>
+					<b>Laguages:</b> Expert in PHP, HTML5, CSS3, C++, and C. Proficient skills in Javascript+JQuery, MySQL and MSSQL. Intermediate skills in C#, ASP.net, Java, Perl, Pascal.<br/>
 					<b>Protocols:</b> Intimate knowledge of HTTP, DNS, FTP, TFTP, TCP, UDP, telnet, IPv4, IPv6
 				</div>
 				<div class="item smarterer">
