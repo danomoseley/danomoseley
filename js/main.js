@@ -37,7 +37,7 @@ $.fn.spin = function(opts) {
 				$("#sign_up").lightbox_me({centered: true, closeClick: false});
 				var token = new Date().getTime();
 
-				window.location = "http://ec2.danomoseley.com/pdf.php?downloadToken="+token;
+				window.location = "pdf.php?downloadToken="+token;
 				
 				var messages = ["Rendering Page", "Creating PDF"];
 				$("#sign_up .first").html(messages[0])
