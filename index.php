@@ -107,12 +107,15 @@ if ($pdf) {
 							November 2011 - Present
 						</div>
 						<div class="cleaner">
-							<a href="http://www.jooraccess.com" target = "_blank">Joor</a>
+							<a href="http://www.jooraccess.com" target = "_blank">JOOR</a>
 						</div>
 					</div>
 					<ul>
 						<li>
 							MVC techniques utilizing <a href="http://cakephp.org/" target = "_blank">Cake PHP</a>, MySQL, JQuery, Java, PostgreSQL on Amazon EC2
+						</li>
+						<li>
+							Linux server configuration and administration
 						</li>
 						<li>
 							Designed and Implemented restful JSON API
