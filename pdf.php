@@ -4,8 +4,6 @@ require_once 'lib/snappy/src/autoload.php';
 
 use Knp\Snappy\Pdf;
 
-// Display the resulting image in the browser 
-// by setting the Content-type header to jpg
 $snappy = new Pdf('/usr/bin/wkhtmltopdf');
 
 if (isset($_GET['downloadToken'])) {
