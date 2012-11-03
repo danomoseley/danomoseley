@@ -1,5 +1,7 @@
 <IfModule mod_rewrite.c>
   RewriteEngine on
+  Redirect 301 /resume.pdf /pdf.php
+  Redirect 301 /Resume.pdf /pdf.php
   Redirect 301 /resume/Resume.pdf /pdf.php
   Redirect 301 /wd/resume.html /
   Redirect 301 /resume/ /
