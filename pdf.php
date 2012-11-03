@@ -14,10 +14,16 @@ $snappy->setOption('margin-top', 5);
 $snappy->setOption('margin-bottom', 5);
 $snappy->setOption('margin-right', 5);
 $snappy->setOption('margin-left', 5);
+$snappy->setOption('allow', realpath(dirname(__FILE__)));
+
+ob_start();
+$pdf = true;
+include('index.php');
+$html = ob_get_clean();
 
 header('Content-Type: application/pdf');
 header('Content-Disposition: attachment; filename="Dan Moseley Resume '.date("Y").'.pdf"');
-$pdf = $snappy->getOutput('http://localhost/?pdf');
+$pdf = $snappy->getOutputFromHtml($html);
 header("Content-length: " . strlen($pdf));
 
 echo $pdf;

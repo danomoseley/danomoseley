@@ -1,21 +1,27 @@
 <!doctype html>
-<?php if (isset($_GET['pdf'])) { $pdf = true; } ?>
+<?php
+if ($pdf) {
+  $prefix = realpath(dirname(__FILE__)) . '/';
+} else {
+  $prefix = '';
+}
+?>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Dan Moseley Resume</title>
   <meta name="description" content="The resume of Daniel Moseley">
   <meta name="author" content="Daniel Moseley">
-  <link rel="stylesheet" type="text/css" href="css/resume.css" />
-  <link rel="stylesheet" type="text/css" media="print" href="css/print.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo $prefix; ?>css/resume.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="<?php echo $prefix; ?>css/print.css" />
   <?php
 	if ($pdf) {
-		echo '<link rel="stylesheet" type="text/css" href="css/pdf.css" />';
+		echo '<link rel="stylesheet" type="text/css" href="'.$prefix.'css/pdf.css" />';
 	}
   ?>
   <!--[if lt IE 10]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/ie.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo $prefix; ?>css/ie.css" />
   <![endif]-->
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
@@ -29,11 +35,11 @@
 	  })();
 
 	</script>  
-	<script src="js/spin.min.js"></script>
+	<script src="<?php echo $prefix; ?>js/spin.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-	<script src="js/jquery.lightbox_me.js"></script>
-	<script src="js/jquery.cookie.js"></script>
-	<script src="js/main.js"></script>
+	<script src="<?php echo $prefix; ?>js/jquery.lightbox_me.js"></script>
+	<script src="<?php echo $prefix; ?>js/jquery.cookie.js"></script>
+	<script src="<?php echo $prefix; ?>js/main.js"></script>
 </head>
 	<div class="container">
 		<a href="resume.pdf" class="print"></a>
