@@ -45,7 +45,7 @@ if ($pdf) {
 		<a href="resume.pdf" class="print"></a>
 		<div class="header">
 			<div class="info">
-				<h1><a href="http://plus.google.com/101975558907093281721" target="_blank">Dan Moseley</a></h1>
+				<h1><a href="http://github.com/danomoseley" target="_blank">Dan Moseley</a></h1>
 				<ul>
 					<li><a target = "_blank" href="http://goo.gl/maps/96M80">New York, NY 10022</a></li>
 					<li><a href="mailto:danomoseley@gmail.com" target = "_blank">danomoseley@gmail.com</a></li>
@@ -81,19 +81,11 @@ if ($pdf) {
 				</div>
 				<div class="item smarterer">
 					<div>
-						<a target = "_blank"href="http://smarterer.com/danomoseley/php" >
+						<a target = "_blank" href="http://smarterer.com/danomoseley" >
 							<img src="http://smarterer.com/danomoseley/php.png?version=2" width="100" alt="" height="90" class="home_badge" title="" />
-						</a>
-						<a target = "_blank"href="http://smarterer.com/danomoseley/html" >
 							<img src="http://smarterer.com/danomoseley/html.png?version=2" width="100" alt="" height="90" class="home_badge" title="" />
-						</a>
-						<a target = "_blank"href="http://smarterer.com/danomoseley/html5" >
 							<img src="http://smarterer.com/danomoseley/html5.png?version=2" width="100" alt="" height="90" class="home_badge" title="" />
-						</a>
-						<a target = "_blank"href="http://smarterer.com/danomoseley/css" >
 							<img src="http://smarterer.com/danomoseley/css.png?version=2" width="100" alt="" height="90" class="home_badge" title="" />
-						</a>
-						<a target = "_blank"href="http://smarterer.com/danomoseley/jquery" >
 							<img src="http://smarterer.com/danomoseley/jquery.png?version=2" width="100" alt="" height="90" class="home_badge" title="" />
 						</a>
 					</div>
@@ -265,7 +257,7 @@ if ($pdf) {
 					</div>
 					<ul class="cleaner">
 						<li>
-							Web development (HTML, JQuery) for sites including <a href="http://www.savannahwolf.com" target = "_blank">savannahwolf.com</a> and <a href="http://www.babyboyfrance.com" target = "_blank">babyboyfrance.com</a>.
+							Web development (HTML, JQuery) for sites including <a href="http://www.babyboyfrance.com" target = "_blank">babyboyfrance.com</a> and <a href="http://www.savannahwolf.com" target = "_blank">savannahwolf.com</a>.
 						</li>
 					</ul>
 				</div>
