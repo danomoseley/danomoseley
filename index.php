@@ -36,7 +36,7 @@ if ($pdf) {
 
 	</script>  
 	<script src="<?php echo $prefix; ?>js/spin.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script src="<?php echo $prefix; ?>js/jquery-1.8.2.min.js"></script>
 	<script src="<?php echo $prefix; ?>js/jquery.lightbox_me.js"></script>
 	<script src="<?php echo $prefix; ?>js/jquery.cookie.js"></script>
 	<script src="<?php echo $prefix; ?>js/main.js"></script>
@@ -82,11 +82,12 @@ if ($pdf) {
 				<div class="item smarterer">
 					<div>
 						<a target = "_blank" href="http://smarterer.com/danomoseley" >
-							<img src="http://smarterer.com/danomoseley/php.png?version=2" width="100" alt="" height="90" class="home_badge" title="" />
-							<img src="http://smarterer.com/danomoseley/html.png?version=2" width="100" alt="" height="90" class="home_badge" title="" />
-							<img src="http://smarterer.com/danomoseley/html5.png?version=2" width="100" alt="" height="90" class="home_badge" title="" />
-							<img src="http://smarterer.com/danomoseley/css.png?version=2" width="100" alt="" height="90" class="home_badge" title="" />
-							<img src="http://smarterer.com/danomoseley/jquery.png?version=2" width="100" alt="" height="90" class="home_badge" title="" />
+							<div class="img" id="smarterer_php"></div>
+							<div class="img" id="smarterer_html"></div>
+							<div class="img" id="smarterer_html5"></div>
+							<div class="img" id="smarterer_css"></div>
+							<div class="img" id="smarterer_jquery"></div>
+							<div style="clear:both;"></div>
 						</a>
 					</div>
 				</div>

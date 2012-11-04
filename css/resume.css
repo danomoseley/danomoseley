@@ -216,3 +216,39 @@ body{
 		top: 40%;
 		left: 50%;
 	}
+	
+	.smarterer div.img{
+		width:100px;
+                height:90px;
+		float:left;
+	}
+	
+	#smarterer_php{
+                width:100px;
+                height:90px;
+            	background:transparent url('../img/smarterer/php.png') 0 0 no-repeat
+	}
+
+        #smarterer_html{
+                width:100px;
+                height:90px;
+                background:transparent url('../img/smarterer/html.png') 0 0 no-repeat
+        }
+
+        #smarterer_html5{
+                width:100px;
+                height:90px;
+                background:transparent url('../img/smarterer/html5.png') 0 0 no-repeat
+        }
+
+        #smarterer_css{
+                width:100px;
+                height:90px;
+                background:transparent url('../img/smarterer/css.png') 0 0 no-repeat
+        }
+
+        #smarterer_jquery{
+                width:100px;
+                height:90px;
+                background:transparent url('../img/smarterer/jquery.png') 0 0 no-repeat
+        }
