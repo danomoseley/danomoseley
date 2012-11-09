@@ -77,9 +77,9 @@ if ($pdf) {
 			<div class="sectionRight">
 				<div class="item">
 					<b>Laguages:</b> Expert in PHP, HTML5, CSS3, C++, and C. Proficient skills in Javascript+JQuery, MySQL and MSSQL. Intermediate skills in C#, ASP.net, Java, Perl, Pascal.<br/>
-					<b>Protocols:</b> Intimate knowledge of HTTP, DNS, FTP, TFTP, TCP, UDP, telnet, IPv4, IPv6
+					<b>Protocols:</b> Intimate knowledge of the web services protocol stack.
 				</div>
-				<div class="item smarterer">
+				<!--<div class="item smarterer">
 					<div>
 						<a target = "_blank" href="http://smarterer.com/danomoseley" >
 							<div class="img" id="smarterer_php"></div>
@@ -90,7 +90,7 @@ if ($pdf) {
 							<div style="clear:both;"></div>
 						</a>
 					</div>
-				</div>
+				</div>-->
 			</div>
 			<div class="cleaner"></div>
 		</div>
