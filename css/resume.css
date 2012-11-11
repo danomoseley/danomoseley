@@ -1,4 +1,4 @@
-body{
+	body{
 		font-family: helvetica;
 		font-size:13px;
 		background-color:#cccccc;
@@ -21,7 +21,9 @@ body{
 		margin-bottom:1.154em;
 	}
 	
-	
+	.section:last-child{
+ 	       margin-bottom: 0px;
+	}
 	
 	h1,h2,.sectionTitle{
 		text-transform:uppercase;
@@ -155,11 +157,12 @@ body{
 	}
 	
 	.container{
+		width: 8.5in;
+		overflow: hidden;
 		position:relative;
 		-moz-box-shadow: 0px 0px 2.308em #888;
 		-webkit-box-shadow: 0px 0px 2.308em #888;
 		box-shadow: 0px 0px 2.308em #888;
-		width:55.385em;
 		margin-right:auto;
 		margin-left:auto;
 		padding:3.846em;

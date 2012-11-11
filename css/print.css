@@ -1,16 +1,16 @@
 body{
-	font-size:11.5px;
 	margin:0px;
 	padding:0px;
+	background-color: white;
 }
 
 .header{
-	margin-bottom:0.770em;
-	padding-bottom: 0.770em;
+	margin-bottom: 1em;
+	padding-bottom: 0em;
 }
 
-.section{
-	margin-bottom:0.83em;
+.about .pull-tab{
+	display:none;
 }
 
 .sectionTitle{
@@ -21,10 +21,6 @@ body{
 	width:80%;
 }
 
-.section:last-child{
-	margin-bottom: 0px;
-}
-
 .item{
 	margin-bottom: 0.5em;
 	padding: 0px;
@@ -32,10 +28,6 @@ body{
 
 .print{
 	display:none;
-}
-
-.item:last-child{
-	margin-bottom: 0px;
 }
 
 .objective{
@@ -50,7 +42,8 @@ body{
 	margin-left:auto;
 	margin-right:auto;
 	padding:0px;
-	width:95%;	
+	height: 11in;
+	overflow: hidden;
 }
 
 .item.smarterer{
@@ -67,6 +60,3 @@ body{
 	display:none;
 }
 
-body{
-	background-color: white;
-}

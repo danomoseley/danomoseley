@@ -16,7 +16,7 @@ if ($pdf) {
   <link rel="stylesheet" type="text/css" media="print" href="<?php echo $prefix; ?>css/print.css" />
   <?php
 	if ($pdf) {
-		echo '<link rel="stylesheet" type="text/css" href="'.$prefix.'css/pdf.css" />';
+		echo '<link rel="stylesheet" type="text/css" href="'.$prefix.'css/print.css" />';
 	}
   ?>
   <!--[if lt IE 10]>
