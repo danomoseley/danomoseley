@@ -76,7 +76,7 @@ if ($pdf) {
 			</div>
 			<div class="sectionRight">
 				<div class="item">
-					<b>Laguages:</b> Expert in PHP, HTML5, CSS3, C++, and C. Proficient skills in Javascript+JQuery, MySQL and MSSQL. Intermediate skills in C#, ASP.net, Java, Perl, Pascal.<br/>
+					<b>Laguages:</b> Expert in Javascript+JQuery, PHP, HTML5, CSS3, C++, and C. Proficient skills in MySQL and MSSQL. Intermediate skills in C#, ASP.net, Java, Perl, Pascal.<br/>
 					<b>Protocols:</b> Intimate knowledge of the web services protocol stack.
 				</div>
 				<!--<div class="item smarterer">
@@ -102,8 +102,8 @@ if ($pdf) {
 				<div class="item">
 					<div>
 						<div class="title">
-							Web Applications Developer
-						</div>
+						    Tech Lead
+                        </div>
 						<div class="secondaryTitle">
 							November 2011 - Present
 						</div>
@@ -113,13 +113,13 @@ if ($pdf) {
 					</div>
 					<ul>
 						<li>
-							MVC techniques utilizing <a href="http://cakephp.org/" target = "_blank">Cake PHP</a>, MySQL, JQuery, Java, PostgreSQL on Amazon EC2
+							Full stack development utilizing <a href="http://cakephp.org/" target = "_blank">Cake PHP</a>, PostgreSQL, JQuery, Java, and MySQL on Amazon EC2
 						</li>
 						<li>
 							Linux server configuration and administration
 						</li>
 						<li>
-							Designed and Implemented restful JSON API
+							Design and implementation of restful JSON API
 						</li>
 						<li>
 							<a href="www.github.com" target="_blank">Git</a> Version Control
