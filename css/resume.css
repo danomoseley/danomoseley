@@ -48,6 +48,29 @@
 		margin-bottom:0px;
 		padding-left:0px;
 	}
+
+    div.info{
+        width:100%;
+    }
+
+    ul.contact li{
+        line-height:3em;
+        float:left;
+        width:39%;
+    }
+
+    ul.contact li.right{
+        text-align:right
+    }
+
+    ul.contact li span:first-child{
+        margin-right:10px;
+    }
+
+    ul.contact li.name{
+        text-align:center;
+        width:22%;
+    }
 	
 	h1{
 		-webkit-margin-after: 0.385em;
@@ -97,12 +120,7 @@
 		font-size:1.077em;
 		float:left;
 	}
-	
-	a{
-		text-decoration:none;
-		color:black;
-	}
-	
+
 	.secondaryTitle{
 		float:left;
 		margin-left:3.077em;
@@ -141,7 +159,6 @@
 	}
 	
 	.item:hover a{
-		color:#00137D;
 		text-decoration:none;
 	}
 	
@@ -212,12 +229,12 @@
 	}
 	
 	.popup.loading{
-		height:60px;
+		height:80px;
 		width:150px;
 	}
 	
 	.popup .spinner{
-		top: 40%;
+		top: 20%;
 		left: 50%;
 	}
 	

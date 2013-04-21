@@ -1,3 +1,8 @@
+<!--
+    Fancy seeing you here.
+    If you're looking at my source you must be pretty awesome.
+    Check me out on github: github.com/danomoseley
+-->
 <!doctype html>
 <?php
 if ($pdf) {
@@ -12,6 +17,11 @@ if ($pdf) {
   <title>Dan Moseley Resume</title>
   <meta name="description" content="The resume of Daniel Moseley">
   <meta name="author" content="Daniel Moseley">
+  <?php
+    if (!$pdf) {
+        echo '<link rel="stylesheet" type="text/css" href="' . $prefix . 'css/bootstrap.min.css" />';
+    }
+  ?>
   <link rel="stylesheet" type="text/css" href="<?php echo $prefix; ?>css/resume.css" />
   <link rel="stylesheet" type="text/css" media="print" href="<?php echo $prefix; ?>css/print.css" />
   <?php
@@ -45,15 +55,24 @@ if ($pdf) {
 		<a href="resume.pdf" class="print"></a>
 		<div class="header">
 			<div class="info">
-				<h1><a href="http://github.com/danomoseley" target="_blank">Dan Moseley</a></h1>
-				<ul>
-					<li><a target = "_blank" href="http://goo.gl/maps/96M80">New York, NY 10022</a></li>
-					<li><a href="mailto:danomoseley@gmail.com" target = "_blank">danomoseley@gmail.com</a></li>
-					<li>646.807.8961</li>
-					<?php if ($pdf) { ?>
-						<li><?php echo date('F j, Y'); ?></li>
-					<?php } ?>
-				</ul>
+				<ul class="contact">
+					<li class="left">
+                        <span>New York, NY</span>
+                        <span><a href="http://github.com/danomoseley" target="_blank">github.com/danomoseley</a></span>
+                    </li>
+                    <li class="name">
+			            <h1>Dan Moseley</h1>
+                        <?php 
+                        if ($pdf) {
+                            echo date('F j, Y');
+                        }
+                        ?>
+                    </li>
+                    <li class="right">
+                        <span><a href="mailto:danomoseley@gmail.com" target = "_blank">danomoseley@gmail.com</a></span>
+                        <span>646.807.8961</span>
+                    </li>
+                </ul>
 			</div>
 			<!-- Used to have an objective in the upper right
 			<div class="objective">
@@ -76,7 +95,7 @@ if ($pdf) {
 			</div>
 			<div class="sectionRight">
 				<div class="item">
-					<b>Laguages:</b> Expert in Javascript+JQuery, PHP, HTML5, CSS3, C++, and C. Proficient skills in MySQL and MSSQL. Intermediate skills in C#, ASP.net, Java, Perl, Pascal.<br/>
+					<b>Laguages:</b> Expert in Javascript+JQuery, PHP, HTML5, and CSS3. Proficient skills in PostgreSQL, MySQL, C++, and C. Intermediate skills in C#, ASP.net, Java, Perl, Pascal.<br/>
 					<b>Protocols:</b> Intimate knowledge of the web services protocol stack.
 				</div>
 				<!--<div class="item smarterer">
@@ -108,21 +127,28 @@ if ($pdf) {
 							November 2011 - Present
 						</div>
 						<div class="cleaner">
-							<a href="http://www.jooraccess.com" target = "_blank">JOOR</a>
+							<a href="http://vimeo.com/58486006" target = "_blank">JOOR</a>
 						</div>
 					</div>
 					<ul>
 						<li>
-							Full stack development utilizing <a href="http://cakephp.org/" target = "_blank">Cake PHP</a>, PostgreSQL, JQuery, Java, and MySQL on Amazon EC2
+							<span class="skill"><a href="http://www.jooraccess.com" target="_blank">Full stack development</a> utilizing </span>
+                            <span class="skill"><a href="http://cakephp.org/" target = "_blank">Cake PHP</a>, </span>
+                            <span class="skill"><a href="http://www.postgresql.org/docs/9.2/static/plpgsql.html" target="_blank">PL/pgSQL</a>, </span>
+                            <span class="skill"><a href="https://www.djangoproject.com/" target="_blank">Django</a>, </span>
+                            <span class="skill"><a href="http://nodejs.org/" target="_blank">Node.js</a>, </span>
+                            <span class="skill"><a href="http://jquery.com/" target="_blank">JQuery</a>, </span>
+                            <span class="skill">Java, </span>
+                            <span class="skill">and MySQL on Amazon EC2.</span>
 						</li>
 						<li>
-							Linux server configuration and administration
+							<span class="skill">Linux server architecture and configuration.</span>
 						</li>
 						<li>
-							Design and implementation of restful JSON API
+							<span class="skill">Design and implementation of stateless JSON REST API.</span>
 						</li>
 						<li>
-							<a href="www.github.com" target="_blank">Git</a> Version Control
+							<span class="skill"><a href="www.github.com" target="_blank">Git</a> Version Control.</span>
 						</li>
 					</ul>
 				</div>
