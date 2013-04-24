@@ -9,6 +9,7 @@
 		padding-right:1.54em;
 		font-size: 1.15em;
 		float:left;
+        margin-top:6px;
 	}
 	
 	.sectionRight{
@@ -53,23 +54,30 @@
         width:100%;
     }
 
-    ul.contact li{
-        line-height:3em;
+    div.contact > div{
+        line-height:50px;
         float:left;
         width:39%;
     }
 
-    ul.contact li.right{
-        text-align:right
+    div.contact div.right div{
+        float:right;
+        margin-left:10px;
     }
 
-    ul.contact li span:first-child{
+    div.contact div.left div{
+        float:left;
         margin-right:10px;
     }
 
-    ul.contact li.name{
+    div.contact div.name{
         text-align:center;
         width:22%;
+    }
+
+    div.contact div.name h1{
+        line-height:50px;
+        margin:0;
     }
 	
 	h1{
@@ -84,14 +92,13 @@
 	}
 	
 	.about{
-		border:0.077em solid #e3e3e3;
+		border-top:0.077em solid #e3e3e3;
+        border-bottom:0.077em solid #e3e3e3;
 		margin-bottom:1.5em;
-		background-color:#EFEFEF;
 		position:relative;
 	}
 	
 	.about .content{
-		display:none;
 		padding:10px;
 	}
 	

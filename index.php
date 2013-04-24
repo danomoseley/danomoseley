@@ -55,24 +55,24 @@ if ($pdf) {
 		<a href="resume.pdf" class="print"></a>
 		<div class="header">
 			<div class="info">
-				<ul class="contact">
-					<li class="left">
-                        <span>New York, NY</span>
-                        <span><a href="http://github.com/danomoseley" target="_blank">github.com/danomoseley</a></span>
-                    </li>
-                    <li class="name">
+				<div class="contact">
+					<div class="left">
+                        <div>New York, NY</div>
+                        <div><a href="http://github.com/danomoseley" target="_blank">github.com/danomoseley</a></div>
+                    </div>
+                    <div class="name">
 			            <h1>Dan Moseley</h1>
                         <?php 
                         if ($pdf) {
                             echo date('F j, Y');
                         }
                         ?>
-                    </li>
-                    <li class="right">
-                        <span><a href="mailto:danomoseley@gmail.com" target = "_blank">danomoseley@gmail.com</a></span>
-                        <span>646.807.8961</span>
-                    </li>
-                </ul>
+                    </div>
+                    <div class="right">
+                        <div><a href="mailto:danomoseley@gmail.com" target = "_blank">danomoseley@gmail.com</a></div>
+                        <div>646.807.8961</div>
+                    </div>
+                </div>
 			</div>
 			<!-- Used to have an objective in the upper right
 			<div class="objective">
@@ -83,10 +83,7 @@ if ($pdf) {
 		</div>
 		<div class="about">
 			<div class="content">
-				<h2>About Me</h2>
 				A web developer always looking to challenge my skills in both front end and back end development, object oriented javascript, RESTful APIs, algorithm complexity analysis, and innovative problem solving.
-			</div>
-			<div class="pull-tab off">
 			</div>
 		</div>
 		<div class="section">
@@ -266,7 +263,7 @@ if ($pdf) {
 							Created fully functional social networking site in C# and MySQL.
 						</li>
 						<li>
-							Team project creating corporate task management system in Java EE with JSP, tomcat, ANT scripts, and SVN.
+							Created corporate task management system in Java EE with JSP, tomcat, ANT scripts, and SVN.
 						</li>
 					</ul>
 				</div>
