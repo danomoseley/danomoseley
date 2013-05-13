@@ -82,9 +82,9 @@ if ($pdf) {
 			<div class="cleaner"></div>
 		</div>
 		<div class="about">
-			<div class="content">
-				A web developer always looking to challenge my skills in both front end and back end development, object oriented javascript, RESTful APIs, algorithm complexity analysis, and innovative problem solving.
-			</div>
+			<h2>
+			    A web developer always looking to challenge my skills in both front end and back end development, object oriented javascript, RESTful APIs, algorithm complexity analysis, and innovative problem solving.
+			</h2>
 		</div>
 		<div class="section">
 			<div class="sectionTitle">

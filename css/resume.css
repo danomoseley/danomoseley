@@ -11,6 +11,12 @@
 		float:left;
         margin-top:6px;
 	}
+
+    h2{
+        font-size:inherit;
+        font-weight:inherit;
+        line-height:inherit;
+    }
 	
 	.sectionRight{
 		width:77%;
@@ -26,19 +32,10 @@
  	       margin-bottom: 0px;
 	}
 	
-	h1,h2,.sectionTitle{
+	h1,.sectionTitle{
 		text-transform:uppercase;
 		font-weight:bold;
 	}
-	
-	h2{
-		-webkit-margin-before: 0px;
-		-webkit-margin-after: 0px;
-		-webkit-margin-start: 0px;
-		-webkit-margin-end: 0px;
-		font-size:1.23em;
-	}
-	
 	
 	ul{
 		-webkit-margin-after: 0px;
