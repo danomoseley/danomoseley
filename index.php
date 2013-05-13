@@ -132,18 +132,21 @@ if ($pdf) {
 							<span class="skill"><a href="http://www.jooraccess.com" target="_blank">Full stack development</a> utilizing </span>
                             <span class="skill"><a href="http://cakephp.org/" target = "_blank">Cake PHP</a>, </span>
                             <span class="skill"><a href="http://www.postgresql.org/docs/9.2/static/plpgsql.html" target="_blank">PL/pgSQL</a>, </span>
+                            <span class="skill"><a href="http://www.redis.io" target="_blank">Redis</a>, <span>
                             <span class="skill"><a href="https://www.djangoproject.com/" target="_blank">Django</a>, </span>
                             <span class="skill"><a href="http://nodejs.org/" target="_blank">Node.js</a>, </span>
                             <span class="skill"><a href="http://jquery.com/" target="_blank">JQuery</a>, </span>
-                            <span class="skill">Java, </span>
-                            <span class="skill">and MySQL on Amazon EC2.</span>
+                            <span class="skill">and Java.</span>
 						</li>
 						<li>
-							<span class="skill">Linux server architecture and configuration.</span>
+							<span class="skill">Amazon EC2 Linux server architecture and configuration.</span>
 						</li>
 						<li>
 							<span class="skill">Design and implementation of stateless JSON REST API.</span>
 						</li>
+                        <li>
+                            <span class="skill">Message queue implementation in PHP and Redis.
+                        </li>
 						<li>
 							<span class="skill"><a href="www.github.com" target="_blank">Git</a> Version Control.</span>
 						</li>
@@ -223,7 +226,7 @@ if ($pdf) {
 					</div>
 					<ul>
 						<li>
-							Managed and trained team of four staff in completing time-sensitive graphic design requests.
+							Managed and trained team of four staff in completing time-sensitive laser engravings.
 						</li>
 						<li>
 							Created custom vector images for laser engraving on sports memorabilia.
