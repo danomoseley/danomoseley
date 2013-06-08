@@ -148,7 +148,7 @@ if ($pdf) {
                             <span class="skill">Message queue implementation in PHP and Redis.
                         </li>
 						<li>
-							<span class="skill"><a href="www.github.com" target="_blank">Git</a> Version Control.</span>
+							<span class="skill"><a href="http://www.github.com" target="_blank">Git</a> Version Control.</span>
 						</li>
 					</ul>
 				</div>
