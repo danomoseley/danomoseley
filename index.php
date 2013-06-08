@@ -257,7 +257,7 @@ if ($pdf) {
 							Memory efficient HTTP proxy server and TFTP server written in C with cross support for IPv4 and IPv6 clients using Berkley sockets and select multiplexing.
 						</li>
 						<li>
-							Custom bash shell implementation written in C using POSIX threads. <a href="/classes/c-sample.html" class="link codeSample">View Code Sample</a>
+							Custom bash shell implementation written in C using POSIX threads. <a href="/classes/c-sample.html" class="link codeSample" target="_blank">View Code Sample</a>
 						</li>
 						<li>
 							Polite HTTP web spider and reverse indexing search engine implementing the <a href="http://en.wikipedia.org/wiki/PageRank" target="_blank">pagerank algorithm</a> in Java.
