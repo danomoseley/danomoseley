@@ -4,6 +4,7 @@
   Redirect 301 /Resume.pdf /pdf.php
   Redirect 301 /resume/Resume.pdf /pdf.php
   Redirect 301 /wd/resume.html /
+  Redirect 301 /wd/Resume.html /
   Redirect 301 /resume/ /
   Redirect 301 /resume /
 </IfModule>

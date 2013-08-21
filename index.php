@@ -92,7 +92,7 @@ if ($pdf) {
 			</div>
 			<div class="sectionRight">
 				<div class="item">
-					<b>Laguages:</b> Expert in Javascript+JQuery, PHP, HTML5, and CSS3. Proficient skills in PostgreSQL, MySQL, C++, and C. Intermediate skills in C#, ASP.net, Java, Perl, Pascal.<br/>
+					<b>Laguages:</b> Expert in PHP, Javascript+JQuery, HTML5, and CSS3. Proficient skills in PostgreSQL, Python, MySQL, C++, and C. Intermediate skills in C#, ASP.net, Java, Perl, Pascal.<br/>
 					<b>Protocols:</b> Intimate knowledge of the web services protocol stack.
 				</div>
 				<!--<div class="item smarterer">
@@ -142,7 +142,7 @@ if ($pdf) {
 							<span class="skill">Amazon EC2 Linux server architecture and configuration.</span>
 						</li>
 						<li>
-							<span class="skill">Design and implementation of stateless JSON REST API.</span>
+							<span class="skill">Design, documentation, and implementation of stateless JSON REST API.</span>
 						</li>
                         <li>
                             <span class="skill">Message queue implementation in PHP and Redis.
@@ -202,10 +202,10 @@ if ($pdf) {
 							Assisted with design and implementation of end-to-end social marketing infrastructure.
 						</li>
 						<li>
-							Implemented MVC techniques in PHP using <a href="http://codeigniter.com/" target="_blank">CodeIgniter</a>, MySQL, JQuery, HTML, and CSS
+							Implemented MVC techniques in PHP using <a href="http://codeigniter.com/" target="_blank">CodeIgniter</a>, MySQL, JQuery, HTML, and CSS.
 						</li>
 						<li>
-							Projects included integration with Twitter, Facebook, and MailChimp APIs
+							Integration with Twitter, Facebook, and MailChimp APIs.
 						</li>
 						<li>
 							Beta release clients include Purina, Agway, and Taylor Rental Retailers.
@@ -215,7 +215,7 @@ if ($pdf) {
 				<div class="item">
 					<div>
 						<div class="title">
-							Graphic Designer
+							Laser Engraver
 						</div>
 						<div class="secondaryTitle">
 							May 2003 - August 2007 (seasonal)
@@ -226,10 +226,10 @@ if ($pdf) {
 					</div>
 					<ul>
 						<li>
-							Managed and trained team of four staff in completing time-sensitive laser engravings.
+							Managed and trained team of four to complete thousands of time-sensitive laser engravings per month.
 						</li>
 						<li>
-							Created custom vector images for laser engraving on sports memorabilia.
+							Created custom vector graphics for laser engraving on sports memorabilia.
 						</li>
 					</ul>
 				</div>
@@ -287,7 +287,7 @@ if ($pdf) {
 					</div>
 					<ul class="cleaner">
 						<li>
-							Web development (HTML, JQuery) for sites including <a href="http://www.babyboyfrance.com" target = "_blank">babyboyfrance.com</a> and <a href="http://www.savannahwolf.com" target = "_blank">savannahwolf.com</a>.
+							Web development (HTML, JQuery) for sites including <a href="http://www.havemeyerpark.com" target="_blank">havemeyerpark.com, <a href="http://babyboyfrance.com" target = "_blank">babyboyfrance.com</a> and <a href="http://www.savwolf.com" target = "_blank">savwolf.com</a>.
 						</li>
 					</ul>
 				</div>
