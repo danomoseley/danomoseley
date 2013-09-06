@@ -92,7 +92,7 @@ if ($pdf) {
 			</div>
 			<div class="sectionRight">
 				<div class="item">
-					<b>Laguages:</b> Expert in PHP, Javascript+JQuery, HTML5, and CSS3. Proficient skills in PostgreSQL, Python, MySQL, C++, and C. Intermediate skills in C#, ASP.net, Java, Perl, Pascal.<br/>
+					<b>Laguages:</b> Expert in PHP, Javascript+JQuery, HTML5, and CSS3. Proficient skills in Python, PostgreSQL,  MySQL, C++, and C. Intermediate skills in C#, ASP.net, Java, Perl, Pascal.<br/>
 					<b>Protocols:</b> Intimate knowledge of the web services protocol stack.
 				</div>
 				<!--<div class="item smarterer">
@@ -131,10 +131,9 @@ if ($pdf) {
 						<li>
 							<span class="skill"><a href="http://www.jooraccess.com" target="_blank">Full stack development</a> utilizing </span>
                             <span class="skill"><a href="http://cakephp.org/" target = "_blank">Cake PHP</a>, </span>
+                            <span class="skill"><a href="https://www.djangoproject.com/" target="_blank">Python Django</a>, </span>
                             <span class="skill"><a href="http://www.postgresql.org/docs/9.2/static/plpgsql.html" target="_blank">PL/pgSQL</a>, </span>
                             <span class="skill"><a href="http://www.redis.io" target="_blank">Redis</a>, <span>
-                            <span class="skill"><a href="https://www.djangoproject.com/" target="_blank">Django</a>, </span>
-                            <span class="skill"><a href="http://nodejs.org/" target="_blank">Node.js</a>, </span>
                             <span class="skill"><a href="http://jquery.com/" target="_blank">JQuery</a>, </span>
                             <span class="skill">and Java.</span>
 						</li>
