@@ -14,7 +14,7 @@ if ($pdf) {
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Dan Moseley Resume</title>
+  <title>Dan Moseley - Software Engineer</title>
   <meta name="description" content="The resume of Daniel Moseley">
   <meta name="author" content="Daniel Moseley">
   <?php
@@ -83,7 +83,7 @@ if ($pdf) {
 		</div>
 		<div class="about">
 			<h2>
-			    A web developer always looking to challenge my skills in both front end and back end development, object oriented javascript, RESTful APIs, algorithm complexity analysis, and innovative problem solving.
+			    A web developer always looking to challenge my skills in both front end and back end development, devops, object oriented javascript, RESTful APIs, algorithm complexity analysis, and innovative problem solving.
 			</h2>
 		</div>
 		<div class="section">
@@ -124,7 +124,7 @@ if ($pdf) {
 							November 2011 - Present
 						</div>
 						<div class="cleaner">
-							<a href="http://vimeo.com/58486006" target = "_blank">JOOR</a>
+							<a href="http://jooraccess.com" target = "_blank">JOOR</a>
 						</div>
 					</div>
 					<ul>
