@@ -121,7 +121,7 @@ if ($pdf) {
 						    Tech Lead
                         </div>
 						<div class="secondaryTitle">
-							November 2011 - Present
+							November 2011 - January 2014
 						</div>
 						<div class="cleaner">
 							<a href="http://jooraccess.com" target = "_blank">JOOR</a>
