@@ -57,7 +57,7 @@ if ($pdf) {
 			<div class="info">
 				<div class="contact">
 					<div class="left">
-                        <div>New York, NY</div>
+                        <div>Brooklyn, NY</div>
                         <div><a href="http://github.com/danomoseley" target="_blank">github.com/danomoseley</a></div>
                     </div>
                     <div class="name">
