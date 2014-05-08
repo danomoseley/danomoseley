@@ -286,7 +286,7 @@ if ($pdf) {
 					</div>
 					<ul class="cleaner">
 						<li>
-							Web development (HTML, JQuery) for sites including <a href="http://havemeyerpark.danomoseley.com" target="_blank">havemeyerpark.com, <a href="http://babyboyfrance.com" target = "_blank">babyboyfrance.com</a> and <a href="http://www.savwolf.com" target = "_blank">savwolf.com</a>.
+							Web development (HTML, JQuery) for sites including <a href="http://havemeyerpark.danomoseley.com" target="_blank">havemeyerpark.com, <a href="http://babyboyfrance.com" target = "_blank">babyboyfrance.com</a>, <a href="http://www.savwolf.com" target = "_blank">savwolf.com</a>, and <a href="http://keyboardcat.danomoseley.com" target = "_blank">keyboardcat.danomoseley.com</a>.
 						</li>
 					</ul>
 				</div>
