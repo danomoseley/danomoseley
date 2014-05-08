@@ -138,10 +138,10 @@ if ($pdf) {
                             <span class="skill">and Java.</span>
 						</li>
 						<li>
-							<span class="skill">Amazon EC2 Linux server architecture and configuration.</span>
+							<span class="skill">Architecture and configuration of high availability EC2 hosted system, $750 million of order volume in 2013.</span>
 						</li>
 						<li>
-							<span class="skill">Design, documentation, and implementation of stateless JSON REST API.</span>
+							<span class="skill">Design, documentation, and implementation of client facing stateless JSON REST API.</span>
 						</li>
                         <li>
                             <span class="skill">Message queue implementation in PHP and Redis.
