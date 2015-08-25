@@ -164,9 +164,6 @@ if ($pdf) {
                         <li>
                             <span class="skill">Message queue implementation in PHP and Redis.
                         </li>
-						<li>
-							<span class="skill"><a href="http://www.github.com" target="_blank">Git</a> Version Control.</span>
-						</li>
 					</ul>
 				</div>
 				<div class="item">
@@ -197,9 +194,6 @@ if ($pdf) {
 						<li>
 							Utilized <a href="http://www.phonegap.com" target = "_blank">PhoneGap</a> application wrapper to access iPhone and Android device camera functionality from within the web application.
 						</li>
-						<li>
-							SVN
-						</li>
 					</ul>
 				</div>
 				<div class="item">
@@ -223,9 +217,6 @@ if ($pdf) {
 						</li>
 						<li>
 							Integration with Twitter, Facebook, and MailChimp APIs.
-						</li>
-						<li>
-							Beta release clients include Purina, Agway, and Taylor Rental Retailers.
 						</li>
 					</ul>
 				</div>
@@ -278,9 +269,6 @@ if ($pdf) {
 						</li>
 						<li>
 							Polite HTTP web spider and reverse indexing search engine implementing the <a href="http://en.wikipedia.org/wiki/PageRank" target="_blank">pagerank algorithm</a> in Java.
-						</li>
-						<li>
-							Created fully functional social networking site in C# and MySQL.
 						</li>
 						<li>
 							Created corporate task management system in Java EE with JSP, tomcat, ANT scripts, and SVN.
