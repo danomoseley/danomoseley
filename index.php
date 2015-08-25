@@ -115,6 +115,24 @@ if ($pdf) {
 				Experience
 			</div>
 			<div class="sectionRight">
+                <div class="item">
+					<div>
+						<div class="title">
+						    Freelance Technical Consultant
+                        </div>
+						<div class="secondaryTitle">
+							January 2014 - Present
+						</div>
+						<div class="cleaner">
+							Dan Moseley, Inc
+						</div>
+					</div>
+                    <ul>
+                        <li>
+                            Full stack development in a diverse language set with a focus on data intensive input/output operations. 
+                        </li>
+                    </ul>
+				</div>
 				<div class="item">
 					<div>
 						<div class="title">
