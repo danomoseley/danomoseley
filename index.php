@@ -92,7 +92,7 @@ if ($pdf) {
 			</div>
 			<div class="sectionRight">
 				<div class="item">
-					<b>Laguages:</b> Expert in PHP, Javascript+JQuery, HTML5, and CSS3. Proficient skills in Python, PostgreSQL,  MySQL, C++, and C. Intermediate skills in C#, ASP.net, Java, Perl, Pascal.<br/>
+					<b>Laguages:</b> Expert in Python, PHP, Javascript+JQuery, HTML5, and CSS3. Proficient skills in PostgreSQL,  MySQL, C++, and C. Intermediate skills in C#, ASP.net, Java, Perl, Pascal.<br/>
 					<b>Protocols:</b> Intimate knowledge of the web services protocol stack.
 				</div>
 				<!--<div class="item smarterer">
