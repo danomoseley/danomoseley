@@ -299,6 +299,7 @@ if ($pdf) {
 			<div class="cleaner"></div>
 		</div>
 		<div class="cleaner"></div>
+		<!--
 		<div class="section">
 			<div class="sectionTitle">
 				Leadership
@@ -326,6 +327,7 @@ if ($pdf) {
 			<div class="cleaner"></div>
 		</div>
 		<div class="cleaner"></div>
+		-->
 		<div class="section">
 			<div class="sectionTitle">
 				Honors
