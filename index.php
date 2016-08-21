@@ -335,7 +335,7 @@ if ($pdf) {
 			<div class="sectionRight">
 				<div class="item">
 					<b>Boy Scouts of America - Eagle Scout</b><br/>
-					<b><a href="http://www.usfirst.org/" target="_blank">FIRST Robotics</a> Team 145 2001-2005</b>
+					<b><a href="http://www.usfirst.org/" target="_blank">FIRST Robotics</a> 2001-2005</b>
 				</div>
 			</div>
 			<div class="cleaner"></div>
