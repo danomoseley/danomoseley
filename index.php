@@ -70,7 +70,6 @@ if ($pdf) {
                     </div>
                     <div class="right">
                         <div><a href="mailto:dan.moseley@gmail.com" target = "_blank">dan.moseley@gmail.com</a></div>
-                        <div>646.807.8961</div>
                     </div>
                 </div>
 			</div>
