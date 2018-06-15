@@ -82,7 +82,7 @@ if ($pdf) {
 		</div>
 		<div class="about">
 			<h2>
-			    A web developer always looking to challenge my skills in both front end and back end development, devops, object oriented javascript, RESTful APIs, algorithm complexity analysis, and innovative problem solving.
+			    A web architect always looking to challenge my skills in systems architecture, scalability, back end and front end development, devops, RESTful APIs, algorithm complexity analysis, and innovative problem solving.
 			</h2>
 		</div>
 		<div class="section">
@@ -114,13 +114,31 @@ if ($pdf) {
 				Experience
 			</div>
 			<div class="sectionRight">
+				<div class="item">
+					<div>
+						<div class="title">
+						    Chief Technology Officer
+                        </div>
+						<div class="secondaryTitle">
+							November 2016 - Present
+						</div>
+						<div class="cleaner">
+							<a href="https://www.slingshothealth.com" target = "_blank">Slingshot Health</a>
+						</div>
+					</div>
+                    <ul>
+                        <li>
+                            Slingshot Health is a revolutionary, investor backed, healthcare network marketplace connecting healthcare professionals and patients in real time. We are a lean tech team utilizing Python / Django / React / AWS located in midtown Manhattan with a well rounded group of full stack developers. We foster teamwork and growth with our open and collaborative work environment, knowledge sharing, problem solving, and progressive learning.
+                        </li>
+                    </ul>
+				</div>
                 <div class="item">
 					<div>
 						<div class="title">
 						    Freelance Technical Consultant
                         </div>
 						<div class="secondaryTitle">
-							January 2014 - Present
+							January 2014 - November 2016
 						</div>
 						<div class="cleaner">
 							Dan Moseley, Inc
@@ -141,12 +159,12 @@ if ($pdf) {
 							November 2011 - January 2014
 						</div>
 						<div class="cleaner">
-							<a href="http://jooraccess.com" target = "_blank">JOOR</a>
+							<a href="https://jooraccess.com" target = "_blank">JOOR</a>
 						</div>
 					</div>
 					<ul>
 						<li>
-							<span class="skill"><a href="http://www.jooraccess.com" target="_blank">Full stack development</a> utilizing </span>
+							<span class="skill">Full stack development utilizing </span>
                             <span class="skill"><a href="http://cakephp.org/" target = "_blank">Cake PHP</a>, </span>
                             <span class="skill"><a href="https://www.djangoproject.com/" target="_blank">Python Django</a>, </span>
                             <span class="skill"><a href="http://www.postgresql.org/docs/9.2/static/plpgsql.html" target="_blank">PL/pgSQL</a>, </span>
