@@ -3,6 +3,7 @@ body{
 	margin:0px;
 	padding:0px;
 	background-color: white;
+	margin-top:35px;
 }
 
 .header{
@@ -14,6 +15,9 @@ body{
     line-height:2em;
 }
 
+.info a[href]:after{
+	content:none !important;
+} 
 .sectionTitle{
 	width:16%;
     margin-top:0px;
